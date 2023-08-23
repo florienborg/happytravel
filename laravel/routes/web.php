@@ -21,3 +21,9 @@ Route::get('/', function () {
 Route::resource('happy_travel', TravelController::class);
 
 Route::get('/search', [TravelController::class, 'search'])->name('travel.search');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/travel/{id}', 'TravelController@show')->name('travel.show');
+});
+
+
