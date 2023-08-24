@@ -70,9 +70,14 @@ class TravelController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Travel $travel)
-    {
-        //
+{
+    // Verifica si el usuario actual es el propietario de la tarjeta
+    if ($travel->user_id === auth()->user()->id) {
+        return view('edit', compact('travel'));
+    } else {
+        return redirect()->route('travel.show', $travel->id)->with('error', 'No tienes permiso para editar esta tarjeta.');
     }
+}
 
     /**
      * Update the specified resource in storage.

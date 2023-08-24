@@ -12,4 +12,10 @@ class Travel extends Model
     protected $table = 'destinations';
 
     protected $fillable = ['name', 'location', 'image', 'description'];
+    
+    public function user()
+{
+    return $this->belongsTo(User::class, 'user_id'); // 'user_id' es el nombre de la columna en la tabla 'destinations'
+}
+
 }
