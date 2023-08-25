@@ -27,13 +27,13 @@
     deleteLink.addEventListener('click', function(event) {
         event.preventDefault();
 
-        // Obtener el travelId desde el atributo data
+        
         const travelId = deleteLink.getAttribute('data-travel-id');
         console.log('travelId:', travelId);
         
         deleteModal.show();
         
-        // Asignar el travelId al formulario
+        
         const actionUrl = `{{ route('happy_travel.destroy', ':id') }}`.replace(':id', travelId);
         deleteForm.setAttribute('action', actionUrl);
 
