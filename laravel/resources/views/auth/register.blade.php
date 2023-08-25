@@ -38,7 +38,7 @@
 
                             <div class="container-btn">
                                 <button type="submit" class="btn btn-primary">Aceptar</button>
-                                <a href="#" class="btn btn-secondary">Cancelar</a>
+                                <a href="{{ route('happy_travel.index') }}" class="btn btn-secondary">Cancelar</a>
                             </div>
 
                             <div class="mb-3 inline-p">
@@ -52,5 +52,6 @@
             </div>
         </div>
     </div>
+    @include('auth.success-modal')
 </main>
 @endsection
